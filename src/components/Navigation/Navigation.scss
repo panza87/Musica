@@ -1,0 +1,114 @@
+.Navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #FFF;
+  z-index: 100;
+  height: 61px;
+  .container {
+    height: 100%;
+  }
+  .logo {
+    button.home-button {
+      display: block;
+      height: 100%;
+      cursor: pointer;
+      img {
+        height: 40px;
+        vertical-align: middle;
+      }
+      span.logo-text {
+        vertical-align: middle
+      }
+    }
+    float: left;
+  }
+  .nav-button {
+    display: flex;
+    flex: auto;
+    justify-content: flex-end;
+    align-items: center;
+    img {
+      height: 40px;
+    }
+  }
+  .link-container {
+    position: absolute;
+    right: 0;
+    transform: translateX(100%);
+    width: 75vw;
+    ul.links {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: block;
+      li {
+        text-align: left;
+        border-bottom: 1px solid #e9edf3;
+        &.header {
+          padding: 21px 25px;
+          background-color: #f6f6f6;
+        }
+        a, button {
+          display: block;
+          padding: 21px 25px;
+          text-decoration: none;
+          font-size: 14px;
+          color: #939393;
+          transition: color 0.25s;
+          &:hover {
+            color: #000;
+          }
+        }
+        button {
+          width: 100%;
+          text-align: left;
+          &:hover {
+            cursor: pointer;
+          }
+          &.desktop-search {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .Navigation {
+    .nav-button {
+      display: none;
+    }
+    .link-container {
+      display: flex;
+      flex: auto;
+      justify-content: flex-end;
+      position: relative;
+      right: auto;
+      width: auto;
+      transform: translateX(0);
+      ul.links {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        li {
+          border-bottom: none;
+          &.header {
+            color: #000;
+            display: none;
+          }
+          button {
+            &.desktop-search {
+              display: block;
+            }
+            &.mobile-search {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
